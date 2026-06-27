@@ -6,23 +6,23 @@ A premium, highly interactive, and responsive web application built for **Namast
 
 ## 📸 Website Preview & Screenshots
 
-Here are some suggested screenshots you can capture and add to this repository to make the page visually engaging:
+Here is a visual overview of the website layout and features:
 
 ### 1. Homepage & Hero Banner
-*Suggested Screenshot: Capture the main hero card showing the floating 3D toy frame and the animated background ocean waves.*
-> **[Placeholder for hero_preview.png]** *(Upload a screenshot here to show the modern floating hero layout)*
+Shows the modern floating hero layout with animated background waves:
+![Homepage Hero Preview](hero_preview.png)
 
 ### 2. 'Driven by Trust' Features Section
-*Suggested Screenshot: Capture the second section showing the 6 value-proposition cards with their high-quality toy photos and overlapping circular icon badges.*
-> **[Placeholder for features_grid.png]** *(Shows off the custom overlapping badge design)*
+Features custom overlapping colored badges and plush product images:
+![Features Grid Preview](features_grid.png)
 
 ### 3. Interactive Products Catalog
-*Suggested Screenshot: Open the Products tab, apply some search queries or category filters, and screenshot the dynamic grid.*
-> **[Placeholder for catalog_view.png]** *(Demonstrates the search, sort, and paginated filter functionality)*
+Demonstrates the client-side search, sorting, and tag-filtering engine:
+![Catalog View Preview](catalog_view.png)
 
 ### 4. Quote Request (RFQ) Drawer
-*Suggested Screenshot: Add 2-3 products to the cart and open the slide-out drawer.*
-> **[Placeholder for rfq_drawer.png]** *(Demonstrates the custom bulk ordering system)*
+Shows the slide-out bulk inquiry list and quote submission layout:
+![RFQ Drawer Preview](rfq_drawer.png)
 
 ---
 
