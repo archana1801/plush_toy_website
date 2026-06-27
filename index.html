@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namaste Overseas | Premium Plush Toy Export Manufacturer</title>
+  <meta name="description" content="Namaste Overseas is a leading premium plush toy export manufacturer. Delivering high-quality, custom designed, safety-certified soft toys globally.">
+  <link rel="stylesheet" href="index.css?v=7">
+</head>
+<body>
+
+  <!-- Floating RFQ FAB (Global Feature) -->
+  <button class="floating-rfq-btn" id="floating-rfq-trigger" aria-label="Open Request for Quote Drawer">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <path d="M16 10a4 4 0 0 1-8 0"></path>
+    </svg>
+    <span class="floating-rfq-badge" id="floating-rfq-count">0</span>
+    <span class="floating-rfq-text">Quick RFQ</span>
+  </button>
+
+  <!-- App Wrapper Container (SaaS Centered Layout) -->
+  <div class="app-container">
+
+    <!-- Global Capsule Header -->
+    <header class="header-nav" id="app-header">
+      <a href="#home" class="logo-container" id="nav-logo-btn">
+        <img src="assets/certifications/logo.png" alt="Namaste Overseas Logo" class="logo-img-branding">
+        <span>Namaste Overseas</span>
+      </a>
+
+      <!-- Menu Navigation -->
+      <nav class="nav-menu">
+        <button class="nav-link active" data-target="home">Home</button>
+        <button class="nav-link" data-target="about">About Us</button>
+        <button class="nav-link" data-target="products">Products</button>
+        <button class="nav-link" data-target="certifications">Certifications</button>
+        <button class="nav-link" data-target="contact">Contact Us</button>
+      </nav>
+
+      <!-- Action Panel -->
+      <div class="header-actions">
+        <button class="cart-trigger" id="cart-trigger-btn" aria-label="Open Inquiry List">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-count-badge">0</span>
+        </button>
+        <a href="#contact" class="btn btn-primary navigate-to-btn" data-target="contact">Get a Quote</a>
+      </div>
+    </header>
+
+    <!-- VIEWS VIEWPORT CONTAINER -->
+    <main class="views-container">
+
+      <!-- ========================================== -->
+      <!-- 🏠 HOME VIEW -->
+      <!-- ========================================== -->
+      <div class="app-view active" id="view-home">
+        
+        <!-- Hero Section -->
+        <section class="card-section hero-card">
+          <div class="hero-left">
+            <span class="hero-tag">Soft Toy Export Desk</span>
+            <h1 class="hero-title">Bringing <span>Plush Ideas</span> to Life</h1>
+            <p class="hero-subtext">Premium soft toy manufacturer and exporter supplying custom plush toys to retailers, distributors, and global brands in over 50 countries.</p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary navigate-to-btn" data-target="products">Explore Products</button>
+              <button class="btn btn-outline navigate-to-btn" data-target="contact">Get a Quote</button>
+            </div>
+          </div>
+          <div class="hero-right">
+            <!-- 3D Floating plush bubbles for depth -->
+            <div class="floating-bubble bubble-1">
+              <img src="assets/products/Product 1.jpg" alt="3D Plush Bubble 1">
+            </div>
+            <div class="floating-bubble bubble-2">
+              <img src="assets/products/Product 3.jpg" alt="3D Plush Bubble 2">
+            </div>
+
+            <div class="hero-image-frame tilt-element" style="transform-style: preserve-3d; transition: transform 0.1s ease;">
+              <video class="hero-video" autoplay loop muted playsinline poster="assets/hero/hero.png">
+                <source src="assets/hero/hero.mp4" type="video/mp4">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-little-child-playing-with-a-plush-teddy-bear-41580-large.mp4" type="video/mp4">
+              </video>
+              <div class="hero-video-overlay"></div>
+            </div>
+          </div>
+          
+          <!-- Interactive flowing ocean waves at the bottom of the hero card -->
+          <div class="hero-waves-container">
+            <svg class="hero-wave wave-1" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,50 Q360,20 720,50 T1440,50 Q1800,20 2160,50 T2880,50 L2880,100 L0,100 Z" fill="#00b4d8" opacity="0.16"></path>
+            </svg>
+            <svg class="hero-wave wave-2" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,60 Q360,80 720,60 T1440,60 Q1800,80 2160,60 T2880,60 L2880,100 L0,100 Z" fill="#90e0ef" opacity="0.25"></path>
+            </svg>
+            <svg class="hero-wave wave-3" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,70 Q180,55 360,70 T720,70 Q900,55 1080,70 T1440,70 Q1620,55 1800,70 T2160,70 Q2340,55 2520,70 T2880,70 L2880,100 L0,100 Z" fill="#4ea8de" opacity="0.20"></path>
+            </svg>
+          </div>
+        </section>
+
+        <!-- Feature Highlights (6 Value-Proposition Cards Below Hero) -->
+        <section class="card-section features-section">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-tag">BUILT ON QUALITY</span>
+              <h2 class="section-title">Driven by Trust</h2>
+            </div>
+          </div>
+          
+          <div class="features-grid">
+            
+            <div class="feature-card">
+              <div class="feature-img-wrap">
+                <img src="assets/products/Product 24.jpg" alt="Child-Safe Materials">
+              </div>
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 class="feature-title">Child-Safe Materials</h3>
+              <p class="feature-desc">Hypoallergenic, non-toxic fabrics and PP cotton stuffing – safe for infants and all ages.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-img-wrap">
+                <img src="assets/products/Product 25.jpg" alt="EN71 / ASTM / CE Certified">
+              </div>
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="feature-title">EN71 / ASTM / CE Certified</h3>
+              <p class="feature-desc">Full compliance for Europe, US, and global markets. Documentation with every order.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-img-wrap">
+                <img src="assets/products/Product 26.jpg" alt="Full Customization">
+              </div>
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="21" x2="4" y2="14"></line>
+                  <line x1="4" y1="10" x2="4" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12" y2="3"></line>
+                  <line x1="20" y1="21" x2="20" y2="16"></line>
+                  <line x1="20" y1="12" x2="20" y2="3"></line>
+                  <line x1="2" y1="14" x2="6" y2="14"></line>
+                  <line x1="10" y1="8" x2="14" y2="8"></line>
+                  <line x1="18" y1="16" x2="22" y2="16"></line>
+                </svg>
+              </div>
+              <h3 class="feature-title">Full Customization</h3>
+              <p class="feature-desc">Size, fabric, color, filling, eyes, accessories, and packaging fully tailored to your brand.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-img-wrap">
+                <img src="assets/products/Product 27.jpg" alt="MOQ from 100 Pieces">
+              </div>
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                  <polygon points="12 22.08 12 12 3 6.92 3 17 12 22.08"></polygon>
+                  <polygon points="12 22.08 12 12 21 6.92 21 17 12 22.08"></polygon>
+                  <polygon points="12 12 3 6.92 12 1.84 21 6.92 12 12"></polygon>
+                </svg>
+              </div>
+              <h3 class="feature-title">MOQ from 100 Pieces</h3>
+              <p class="feature-desc">Accessible minimums for growing brands, scalable to 10,000+ units per style.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-img-wrap">
+                <img src="assets/products/Product 28.jpg" alt="Export-Ready Packaging">
+              </div>
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                  <rect x="1" y="3" width="22" height="5"></rect>
+                  <line x1="10" y1="12" x2="14" y2="12"></line>
+                </svg>
+              </div>
+              <h3 class="feature-title">Export-Ready Packaging</h3>
+              <p class="feature-desc">Retail-ready packaging, hang tags, cartons, and full export documentation in-house.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-img-wrap">
+                <img src="assets/products/Product 29.jpg" alt="Private Label & OEM">
+              </div>
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                  <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                </svg>
+              </div>
+              <h3 class="feature-title">Private Label & OEM</h3>
+              <p class="feature-desc">We manufacture under your brand – from concept sketches to production-ready samples.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="card-section">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-tag">Curated Collections</span>
+              <h2 class="section-title">Product Categories</h2>
+            </div>
+            <button class="btn btn-secondary navigate-to-btn" data-target="products">View Catalog</button>
+          </div>
+          <div class="categories-container" id="home-categories-grid">
+            <!-- Dynamically populated in app.js with Products 9-14 -->
+          </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="card-section">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-tag">Exporter Showcases</span>
+              <h2 class="section-title">Featured Products</h2>
+            </div>
+            <button class="btn btn-secondary navigate-to-btn" data-target="products">View All Products</button>
+          </div>
+          <div class="products-mini-grid" id="featured-products-grid">
+            <!-- Dynamically populated in app.js with Products 1-8 -->
+          </div>
+        </section>
+
+        <!-- About Us Summary section -->
+        <section class="card-section about-summary-card">
+          <div class="about-summary-img">
+            <img src="assets/products/Product 15.jpg" alt="Namaste Overseas Factory Showcase">
+          </div>
+          <div class="about-summary-content">
+            <span class="section-tag">Our Legacy</span>
+            <h2 class="section-title">About Us</h2>
+            <p class="about-summary-desc">Namaste Overseas is a premier designer, manufacturer, and exporter of child-safe plush soft toys. Operating with state-of-the-art facilities in India, we deliver bespoke plush designs that capture hearts globally. Our manufacturing processes prioritize ethical standards, environmental sustainability, and premium comfort.</p>
+            <p class="about-summary-desc" style="font-size:14px; margin-top:-10px;">We possess robust manufacturing capabilities to support commercial bulk exports and handle complex supply chains, managing shipping logistics to major ports around the world.</p>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years of Craft</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Clients Worldwide</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Plush Designs</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Export Countries</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="card-section certifications-summary-card">
+          <div class="section-title-wrap">
+            <span class="section-tag">Safety and Trade Compliance</span>
+            <h2 class="section-title">Registered & Recognised By</h2>
+          </div>
+          <div class="certifications-grid">
+            <div class="cert-card">
+              <img src="assets/certifications/certificate1.png" class="cert-logo" alt="MSME Registration Logo">
+              <span class="cert-name">MSME Registered</span>
+            </div>
+            <div class="cert-card">
+              <img src="assets/certifications/certificate2.png" class="cert-logo" alt="FIEO Certification Logo">
+              <span class="cert-name">FIEO Certificate</span>
+            </div>
+            <div class="cert-card">
+              <img src="assets/certifications/certificate3.png" class="cert-logo" alt="DGFT License Logo">
+              <span class="cert-name">DGFT License</span>
+            </div>
+          </div>
+          <p class="cert-note-text">Full test reports, certificates, and compliance documentation available on request.</p>
+        </section>
+
+        <!-- Dynamic CTA Card -->
+        <section class="card-section dynamic-cta-card">
+          <div class="cta-card-content">
+            <h2 class="cta-card-title">Looking for a Reliable Plush Toy Manufacturer?</h2>
+            <p class="cta-card-desc">Partner with Namaste Overseas for premium quality, safety compliance, and robust export capabilities.</p>
+            <button class="btn btn-primary navigate-to-btn" data-target="contact" style="background:#ffffff; color:var(--primary); font-weight:700;">Get a Quote</button>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ========================================== -->
+      <!-- 📦 PRODUCTS VIEW -->
+      <!-- ========================================== -->
+      <div class="app-view" id="view-products">
+        
+        <div class="products-workspace">
+          
+          <!-- Left Sidebar Filters -->
+          <aside class="filter-sidebar">
+            <div class="card-section sidebar-card">
+              
+              <!-- Search -->
+              <div class="filter-group">
+                <h4 class="filter-group-title">Search Products</h4>
+                <div class="search-input-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input type="text" class="form-input" id="search-products-field" placeholder="e.g. Teddy, Unicorn...">
+                </div>
+              </div>
+
+              <!-- Categories Filter -->
+              <div class="filter-group">
+                <h4 class="filter-group-title">Category</h4>
+                <div id="filter-categories-container" class="form-field" style="gap:10px;">
+                  <!-- Dynamic checkboxes in app.js -->
+                </div>
+              </div>
+
+              <!-- Size Filter -->
+              <div class="filter-group">
+                <h4 class="filter-group-title">Product Size</h4>
+                <div id="filter-sizes-container" class="form-field" style="gap:10px;">
+                  <!-- Dynamic checkboxes in app.js -->
+                </div>
+              </div>
+
+              <!-- Material Filter -->
+              <div class="filter-group">
+                <h4 class="filter-group-title">Fabric Material</h4>
+                <div id="filter-materials-container" class="form-field" style="gap:10px;">
+                  <!-- Dynamic checkboxes in app.js -->
+                </div>
+              </div>
+
+              <!-- Reset Button -->
+              <button class="btn btn-secondary" id="clear-filters-btn" style="width:100%;">Clear Filters</button>
+
+            </div>
+          </aside>
+
+          <!-- Right Products Panel -->
+          <div class="catalog-content-panel">
+            
+            <!-- Top Controls bar -->
+            <div class="card-section catalog-header-card">
+              <div class="results-count" id="results-count-text">
+                Showing <span>0</span> of <span>53</span> products
+              </div>
+              <div class="sort-select-wrap">
+                <label for="catalog-sort-select">Sort By:</label>
+                <select class="sort-select" id="catalog-sort-select">
+                  <option value="id-asc">Default (Product ID)</option>
+                  <option value="name-asc">Name (A-Z)</option>
+                  <option value="name-desc">Name (Z-A)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Product Grid (All 53 items allowed) -->
+            <div class="products-catalog-grid" id="products-catalog-grid">
+              <!-- Dynamically populated in app.js -->
+            </div>
+
+            <!-- Pagination Grid -->
+            <div class="pagination-wrap" id="catalog-pagination">
+              <!-- Dynamically populated in app.js -->
+            </div>
+
+            <!-- OEM/ODM Prototyping Section -->
+            <div class="card-section oem-prototyping-card">
+              <div class="oem-card-content">
+                <span class="section-tag" style="color:var(--primary-hover);">Bespoke Customization</span>
+                <h3 class="oem-card-title">Create Your Product / Get in Touch</h3>
+                <p class="oem-card-desc">We offer end-to-end OEM/ODM design services. Send us your concept designs, sketchbooks, or digital illustrations, and our toy engineering team will create custom prototypes, fabricate fabric test units, and customize packaging specifications based on your brand requirements.</p>
+                <button class="btn btn-primary navigate-to-btn" data-target="contact" style="margin-top:10px;">Contact Us</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================================== -->
+      <!-- 📖 ABOUT US VIEW -->
+      <!-- ========================================== -->
+      <div class="app-view" id="view-about">
+        
+        <section class="card-section about-hero-card">
+          <span class="hero-tag">Namaste Overseas</span>
+          <h1 class="about-hero-title">About Us</h1>
+          <p class="about-hero-desc">Supplying beautiful, compliant, and customized plush products to importers, retailers, and safety-conscious brands across Europe, North America, and Australia.</p>
+          
+          <!-- Interactive flowing ocean waves in background -->
+          <div class="hero-waves-container">
+            <svg class="hero-wave wave-1" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,50 Q360,20 720,50 T1440,50 Q1800,20 2160,50 T2880,50 L2880,100 L0,100 Z" fill="#00b4d8" opacity="0.16"></path>
+            </svg>
+            <svg class="hero-wave wave-2" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,60 Q360,80 720,60 T1440,60 Q1800,80 2160,60 T2880,60 L2880,100 L0,100 Z" fill="#90e0ef" opacity="0.25"></path>
+            </svg>
+            <svg class="hero-wave wave-3" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,70 Q180,55 360,70 T720,70 Q900,55 1080,70 T1440,70 Q1620,55 1800,70 T2160,70 Q2340,55 2520,70 T2880,70 L2880,100 L0,100 Z" fill="#4ea8de" opacity="0.20"></path>
+            </svg>
+          </div>
+        </section>
+
+        <!-- Section 1: Full Story -->
+        <section class="card-section about-story-grid">
+          <div class="about-story-text">
+            <span class="section-tag">Our History</span>
+            <h2 class="section-title" style="font-size:26px; margin-bottom:15px;">Corporate Legacy & Mission</h2>
+            <p class="about-paragraph">Founded with a vision to deliver premium quality plush toys to the global export market, Namaste Overseas has established itself as an industry leader in customized soft toy design and ethical manufacturing. We translate creative designs into soft companions, combining fine craftsmanship with state-of-the-art machinery.</p>
+            <p class="about-paragraph">Our dedication lies in safety, environmental responsibility, and structural durability. Every plush toy produced in our factory undergoes strict audits, ensuring each unit conforms to complex international safety norms before sailing to its destination.</p>
+          </div>
+          <div class="about-story-img-frame">
+            <img src="assets/products/Product 16.jpg" alt="Soft toy craftsmanship story">
+          </div>
+        </section>
+
+        <!-- Section 2: Factory & Manufacturing Strength -->
+        <section class="card-section about-story-grid reverse">
+          <div class="about-story-img-frame">
+            <img src="assets/products/Product 17.jpg" alt="Modern plush toy factory floor">
+          </div>
+          <div class="about-story-text">
+            <span class="section-tag">Factory Audit</span>
+            <h2 class="section-title" style="font-size:26px; margin-bottom:15px;">Manufacturing Strength & Scale</h2>
+            <p class="about-paragraph">We maintain a modern manufacturing ecosystem with a capacity to deliver bulk monthly export orders. Our factory is equipped with computer-guided sewing desks, high-precision laser fabric cutters, and specialized embroidery stations capable of producing intricate shapes and high-density branding stitches.</p>
+            <p class="about-paragraph">Our warehouse storage maintains temperature and humidity controls to protect plush materials. We operate in full compliance with global fair-labor rules, ensuring an ethical workspace for all our skilled toy craftsmen.</p>
+          </div>
+        </section>
+
+        <!-- Section 3: Quality & Compliance -->
+        <section class="card-section">
+          <div class="section-title-wrap" style="text-align:center; align-items:center; margin-bottom:30px;">
+            <span class="section-tag">Quality Assurance</span>
+            <h2 class="section-title">Quality & Export Compliance</h2>
+          </div>
+          <div class="about-highlights-grid">
+            <div class="card-section about-highlight-card">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h4 class="feature-title">Metal Detection Protocols</h4>
+              <p class="feature-desc">All finished products pass through specialized conveyor metal detectors to ensure 100% security against stray needles.</p>
+            </div>
+            <div class="card-section about-highlight-card">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <h4 class="feature-title">Stitch Integrity Tests</h4>
+              <p class="feature-desc">Seams are tested under mechanical load scales to verify strength, ensuring toys cannot easily tear or spill stuffing.</p>
+            </div>
+            <div class="card-section about-highlight-card">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              </div>
+              <h4 class="feature-title">Audited Supply Chain</h4>
+              <p class="feature-desc">We source only certified hypoallergenic fibers, locking safety eyes, and environment-safe coloring dyes.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="card-section" style="background:var(--primary-light); text-align:center;">
+          <div class="section-title-wrap" style="text-align:center; align-items:center; margin-bottom:30px;">
+            <span class="section-tag" style="color:var(--primary-hover);">Scale in Numbers</span>
+            <h2 class="section-title">Factory Capacity</h2>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-item" style="background:#ffffff;">
+              <div class="stat-number">150K+</div>
+              <div class="stat-label">Units Monthly Capacity</div>
+            </div>
+            <div class="stat-item" style="background:#ffffff;">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Fair Trade Compliant</div>
+            </div>
+            <div class="stat-item" style="background:#ffffff;">
+              <div class="stat-number">24 Hrs</div>
+              <div class="stat-label">Prototyping Turnaround</div>
+            </div>
+            <div class="stat-item" style="background:#ffffff;">
+              <div class="stat-number">FOB/CIF</div>
+              <div class="stat-label">Flexible Delivery Terms</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Global CTA Banner on About -->
+        <section class="card-section dynamic-cta-card">
+          <div class="cta-card-content">
+            <h2 class="cta-card-title">Looking for a Reliable Plush Toy Manufacturer?</h2>
+            <p class="cta-card-desc">Partner with Namaste Overseas for premium quality, safety compliance, and robust export capabilities.</p>
+            <button class="btn btn-primary navigate-to-btn" data-target="contact" style="background:#ffffff; color:var(--primary); font-weight:700;">Get a Quote</button>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ========================================== -->
+      <!-- 🏅 CERTIFICATIONS VIEW -->
+      <!-- ========================================== -->
+      <div class="app-view" id="view-certifications">
+        
+        <section class="card-section certifications-hero">
+          <span class="hero-tag">Compliance & Trademarks</span>
+          <h1 class="about-hero-title">Safety Registrations & Certificates</h1>
+          <p class="about-hero-desc">We comply with globally acknowledged security directives to safeguard infants and children. Our trade registrations guarantee secure commerce transactions.</p>
+          
+          <!-- Interactive flowing ocean waves in background -->
+          <div class="hero-waves-container">
+            <svg class="hero-wave wave-1" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,50 Q360,20 720,50 T1440,50 Q1800,20 2160,50 T2880,50 L2880,100 L0,100 Z" fill="#00b4d8" opacity="0.16"></path>
+            </svg>
+            <svg class="hero-wave wave-2" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,60 Q360,80 720,60 T1440,60 Q1800,80 2160,60 T2880,60 L2880,100 L0,100 Z" fill="#90e0ef" opacity="0.25"></path>
+            </svg>
+            <svg class="hero-wave wave-3" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,70 Q180,55 360,70 T720,70 Q900,55 1080,70 T1440,70 Q1620,55 1800,70 T2160,70 Q2340,55 2520,70 T2880,70 L2880,100 L0,100 Z" fill="#4ea8de" opacity="0.20"></path>
+            </svg>
+          </div>
+        </section>
+
+        <!-- Display Certificates -->
+        <section class="cert-large-grid">
+          <div class="card-section cert-display-card">
+            <div class="cert-image-frame zoom-certificate" data-src="assets/certifications/certificate1.png">
+              <img src="assets/certifications/certificate1.png" alt="MSME Registration Certificate">
+            </div>
+            <h3 class="cert-info-heading">MSME Registration Certificate</h3>
+            <p class="cert-info-desc">Micro, Small and Medium Enterprises corporate registration. Validates manufacturing infrastructure compliance.</p>
+          </div>
+
+          <div class="card-section cert-display-card">
+            <div class="cert-image-frame zoom-certificate" data-src="assets/certifications/certificate2.png">
+              <img src="assets/certifications/certificate2.png" alt="FIEO Registration Certificate">
+            </div>
+            <h3 class="cert-info-heading">FIEO Membership Certificate</h3>
+            <p class="cert-info-desc">Federation of Indian Export Organisations membership certificate. Validates Namaste Overseas as an approved exporter of toys.</p>
+          </div>
+
+          <div class="card-section cert-display-card">
+            <div class="cert-image-frame zoom-certificate" data-src="assets/certifications/certificate3.png">
+              <img src="assets/certifications/certificate3.png" alt="DGFT Import Export Code">
+            </div>
+            <h3 class="cert-info-heading">DGFT Import-Export License</h3>
+            <p class="cert-info-desc">Directorate General of Foreign Trade approved license IEC. Legally authorized for shipping containers globally.</p>
+          </div>
+        </section>
+
+        <!-- Add New Section 1: Testing Procedures -->
+        <section class="card-section safety-compliance-card">
+          <div class="section-title-wrap">
+            <span class="section-tag">Security Inspections</span>
+            <h2 class="section-title">1. Testing Procedures</h2>
+          </div>
+          <div class="testing-procedures-grid">
+            <div class="card-section test-card">
+              <h4 class="test-title">Tensile Stitch Testing</h4>
+              <p class="test-desc">All seams are mechanically tested under load scales to verify stitch strength, ensuring children cannot pull seams apart to access stuffing.</p>
+            </div>
+            <div class="card-section test-card">
+              <h4 class="test-title">Torque & Component Security</h4>
+              <p class="test-desc">Verifies that small components (plastic eyes, noses, custom labels) sustain high rotational and pulling forces, preventing choking hazards.</p>
+            </div>
+            <div class="card-section test-card">
+              <h4 class="test-title">Drop & Structural Durability</h4>
+              <p class="test-desc">Toys undergo simulated impact drop tests to guarantee that internal wire frames or plastic sound boxes remain safely enclosed inside the plush body.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Add New Section 2: Safety Standards -->
+        <section class="card-section safety-compliance-card">
+          <div class="section-title-wrap">
+            <span class="section-tag">Quality Directives</span>
+            <h2 class="section-title">2. Safety Standards</h2>
+          </div>
+          <div class="testing-procedures-grid">
+            <div class="card-section test-card" style="border-left: 4px solid var(--primary);">
+              <h4 class="test-title">CE Conformity</h4>
+              <p class="test-desc">Meets all safety, health, and environmental protection requirements for products sold within the European Economic Area.</p>
+            </div>
+            <div class="card-section test-card" style="border-left: 4px solid var(--primary);">
+              <h4 class="test-title">EN71 Part 1, 2 & 3 Compliance</h4>
+              <p class="test-desc">Ensures structural safety, mechanical properties, slow flammability, and the complete absence of heavy metals in fabrics or stuffing fibers.</p>
+            </div>
+            <div class="card-section test-card" style="border-left: 4px solid var(--primary);">
+              <h4 class="test-title">ASTM F963 & BIS Standard</h4>
+              <p class="test-desc">Certified under the standard consumer safety specifications for toy safety in the United States and Bureau of Indian Standards registration in India.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Add New Section 3: Export Compliance -->
+        <section class="card-section safety-compliance-card">
+          <div class="section-title-wrap">
+            <span class="section-tag">Global Logistics</span>
+            <h2 class="section-title">3. Export Compliance</h2>
+          </div>
+          <div class="testing-procedures-grid">
+            <div class="card-section test-card">
+              <h4 class="test-title">FOB & CIF Packaging</h4>
+              <p class="test-desc">Corrugated seaworthy outer cartons, individual inner polybagging, desiccant pouch inserts, and precise dimensional packaging to prevent moisture and box collapsing.</p>
+            </div>
+            <div class="card-section test-card">
+              <h4 class="test-title">Container Clearance Support</h4>
+              <p class="test-desc">We issue complete export papers: GSP certificate of origin, commercial invoices, custom packing lists, and certified test reports for swift customs clearances.</p>
+            </div>
+            <div class="card-section test-card">
+              <h4 class="test-title">Port Logistics Handling</h4>
+              <p class="test-desc">Direct container shipping dispatch services from India's major ICD and port hubs (including Nhava Sheva/JNPT) directly to your destination ports.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Global CTA Banner on Certifications -->
+        <section class="card-section dynamic-cta-card">
+          <div class="cta-card-content">
+            <h2 class="cta-card-title">Looking for a Reliable Plush Toy Manufacturer?</h2>
+            <p class="cta-card-desc">Partner with Namaste Overseas for premium quality, safety compliance, and robust export capabilities.</p>
+            <button class="btn btn-primary navigate-to-btn" data-target="contact" style="background:#ffffff; color:var(--primary); font-weight:700;">Get a Quote</button>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ========================================== -->
+      <!-- 📞 CONTACT US VIEW -->
+      <!-- ========================================== -->
+      <div class="app-view" id="view-contact">
+        
+        <section class="card-section contact-hero contact-hero-split">
+          <div class="contact-hero-left">
+            <span class="hero-tag">Reach Us</span>
+            <h1 class="about-hero-title" style="text-align: left;">Contact Us</h1>
+            <p class="about-hero-desc" style="text-align: left; max-width: none;">Have a custom design or volume inquiry? Our export desk provides logistics support, custom tariff mapping, and design prototyping reviews.</p>
+          </div>
+          <div class="contact-hero-right">
+            <div class="contact-hero-image-frame">
+              <img src="assets/products/Product 18.jpg" alt="Namaste Overseas Premium Plush Teddy Bear Export Sample">
+            </div>
+          </div>
+          
+          <!-- Interactive flowing ocean waves in background -->
+          <div class="hero-waves-container">
+            <svg class="hero-wave wave-1" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,50 Q360,20 720,50 T1440,50 Q1800,20 2160,50 T2880,50 L2880,100 L0,100 Z" fill="#00b4d8" opacity="0.16"></path>
+            </svg>
+            <svg class="hero-wave wave-2" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,60 Q360,80 720,60 T1440,60 Q1800,80 2160,60 T2880,60 L2880,100 L0,100 Z" fill="#90e0ef" opacity="0.25"></path>
+            </svg>
+            <svg class="hero-wave wave-3" viewBox="0 0 2880 100" preserveAspectRatio="none">
+              <path d="M0,70 Q180,55 360,70 T720,70 Q900,55 1080,70 T1440,70 Q1620,55 1800,70 T2160,70 Q2340,55 2520,70 T2880,70 L2880,100 L0,100 Z" fill="#4ea8de" opacity="0.20"></path>
+            </svg>
+          </div>
+        </section>
+
+        <section class="contact-layout-split">
+          
+          <div class="contact-details-box">
+            
+            <div class="contact-detail-card">
+              <div class="contact-detail-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-detail-content">
+                <span class="contact-detail-title">Corporate Office & Factory</span>
+                <p class="contact-detail-text">Namaste Overseas,<br>Sector 63, Noida,<br>Uttar Pradesh - 201301, India</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-card">
+              <div class="contact-detail-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-detail-content">
+                <span class="contact-detail-title">Export Email</span>
+                <p class="contact-detail-text">
+                  <a href="mailto:export@namasteoverseas.com">export@namasteoverseas.com</a><br>
+                  <a href="mailto:info@namasteoverseas.com">info@namasteoverseas.com</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-detail-card">
+              <div class="contact-detail-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="contact-detail-content">
+                <span class="contact-detail-title">Export Hotlines</span>
+                <p class="contact-detail-text">
+                  Phone: <a href="tel:+919876543210">+91 98765 43210</a><br>
+                  WhatsApp: <a href="https://wa.me/919876543210" target="_blank" rel="noopener">+91 98765 43210</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Image moved to Contact Hero Section -->
+
+          </div>
+
+          <div class="card-section">
+            <h3 class="about-text-heading" style="margin-bottom:20px;">Submit Volume Export Inquiry</h3>
+            <form id="main-contact-form" class="form-grid">
+              <div class="form-field">
+                <label class="form-label" for="contact-name">Full Name</label>
+                <input class="form-input" type="text" id="contact-name" placeholder="John Doe" required>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="contact-company">Company Name</label>
+                <input class="form-input" type="text" id="contact-company" placeholder="Global Toys Ltd" required>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="contact-country">Destination Country</label>
+                <input class="form-input" type="text" id="contact-country" placeholder="United Kingdom" required>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="contact-quantity">Estimated Quantity (units)</label>
+                <input class="form-input" type="number" id="contact-quantity" min="500" placeholder="Minimum MOQ 1,000 pcs" required>
+              </div>
+              <div class="form-field full-width">
+                <label class="form-label" for="contact-message">Inquiry Requirements</label>
+                <textarea class="form-input" id="contact-message" placeholder="Provide product specifications, fabric preferences, custom labels, and test certificates requirements..." required></textarea>
+              </div>
+              <div class="form-field full-width" style="margin-top:8px;">
+                <button type="submit" class="btn btn-primary" style="width:100%;">Submit Custom Export Quote</button>
+              </div>
+            </form>
+            <div class="form-success-alert" id="main-success-msg" style="display:none;">
+              <div class="form-success-icon">✓</div>
+              <h3 class="form-success-title">Inquiry Logged Successfully!</h3>
+              <p>Thank you for contacting Namaste Overseas. A dedicated export account representative will reply with customized FOB quotes and timeline estimates within 24 business hours.</p>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+
+    </main>
+
+    <!-- Global App Footer -->
+    <footer class="footer-card">
+      <div class="footer-top">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="assets/certifications/logo.png" alt="Namaste Overseas Logo" class="footer-logo-img">
+            <span>Namaste Overseas</span>
+          </div>
+          <p class="footer-desc">Premium soft toy manufacturer and exporter delivering safety-certified, custom plush toys to retailers, distributors, and global brands.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><button class="footer-link navigate-to-btn" data-target="home">Home</button></li>
+            <li><button class="footer-link navigate-to-btn" data-target="about">About Us</button></li>
+            <li><button class="footer-link navigate-to-btn" data-target="products">Product Catalog</button></li>
+            <li><button class="footer-link navigate-to-btn" data-target="certifications">Compliance & Safety</button></li>
+            <li><button class="footer-link navigate-to-btn" data-target="contact">Contact Us</button></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Toy Compliance</h4>
+          <ul class="footer-links">
+            <li class="footer-desc" style="max-width:none; font-size:13px; line-height:1.4;">EN71 Part 1, 2, 3 Compliant</li>
+            <li class="footer-desc" style="max-width:none; font-size:13px; line-height:1.4;">CE & ASTM F963 Certified</li>
+            <li class="footer-desc" style="max-width:none; font-size:13px; line-height:1.4;">BIS Registered Manufacturer</li>
+            <li class="footer-desc" style="max-width:none; font-size:13px; line-height:1.4;">100% Metal Detector Safe</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Export Desk</h4>
+          <ul class="footer-links">
+            <li class="footer-desc" style="max-width:none; font-size:13px; line-height:1.4;">Sector 63, Noida, UP, 201301, India</li>
+            <li class="footer-desc" style="max-width:none; font-size:13px; line-height:1.4;">Email: export@namasteoverseas.com</li>
+            <li class="footer-desc" style="max-width:none; font-size:13px; line-height:1.4;">Phone: +91 98765 43210</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Namaste Overseas. All Rights Reserved. Manufactured and exported with care.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.49 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- INQUIRY CART DRAWER SIDEBAR PANEL -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer-panel">
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          Quote Inquiry List
+        </h3>
+        <button class="cart-drawer-close" id="cart-close-btn" aria-label="Close Inquiry List">✕</button>
+      </div>
+
+      <!-- Scrollable Cart items -->
+      <div class="cart-items-container" id="cart-items-list">
+        <!-- Dynamically populated in app.js -->
+      </div>
+
+      <!-- Cart Footer & submission form -->
+      <div class="cart-drawer-footer" id="cart-footer-controls">
+        <form id="cart-quote-form" style="display:flex; flex-direction:column; gap:12px;">
+          <div class="form-field">
+            <label class="form-label" for="cart-name-field">Full Name</label>
+            <input class="form-input" type="text" id="cart-name-field" placeholder="John Doe" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cart-company-field">Company Name</label>
+            <input class="form-input" type="text" id="cart-company-field" placeholder="Toy Traders Inc." required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cart-country-field">Destination Country</label>
+            <input class="form-input" type="text" id="cart-country-field" placeholder="Germany" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cart-notes-field">Inquiry Notes (Quantity, Shipping, Custom Labels)</label>
+            <textarea class="form-input" id="cart-notes-field" style="min-height:70px;" placeholder="e.g. Need 2,000 units of each item, custom sewn labels..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Request Bulk FOB Estimates</button>
+        </form>
+        <div class="form-success-alert" id="cart-success-msg" style="display:none; margin-top:0;">
+          <div class="form-success-icon">✓</div>
+          <h3 class="form-success-title">Quote Request Logged!</h3>
+          <p style="font-size:13px; line-height:1.4; margin-top:4px;">We've received your inquiry details for the selected products. Our design and logistics team will email you pricing sheets shortly.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PRODUCT DETAIL MODAL OVERLAY -->
+    <div class="modal-overlay" id="product-detail-modal">
+      <div class="modal-card">
+        <button class="modal-close-btn" id="product-modal-close-btn" aria-label="Close details">✕</button>
+        <div class="product-modal-grid">
+          <div class="product-modal-img-wrap">
+            <img src="" alt="" id="product-modal-img">
+          </div>
+          <div class="product-modal-info">
+            <span class="product-modal-tag" id="product-modal-category"></span>
+            <h2 class="product-modal-title" id="product-modal-title"></h2>
+            <p class="product-modal-desc" id="product-modal-description"></p>
+            
+            <div class="product-modal-details-list">
+              <div class="detail-item">
+                <span class="detail-label">Export MOQ</span>
+                <span class="detail-value" id="product-modal-moq">1,000 pcs</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Dimensions</span>
+                <span class="detail-value" id="product-modal-size"></span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Primary Fabric</span>
+                <span class="detail-value" id="product-modal-material"></span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">FOB Packaging</span>
+                <span class="detail-value" id="product-modal-packaging"></span>
+              </div>
+            </div>
+
+            <div class="product-modal-features">
+              <span class="detail-label">Safety & Quality Pillars</span>
+              <div class="feature-pill-wrap" id="product-modal-features-container">
+                <!-- Dynamic pills -->
+              </div>
+            </div>
+
+            <!-- Global Feature: RFQ Add from Modal -->
+            <button class="btn btn-primary" id="product-modal-add-btn" style="width:100%; margin-top:10px;">
+              Add to Quote Request
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- FULLSCREEN CERTIFICATE LIGHTBOX MODAL -->
+    <div class="modal-overlay" id="certificate-lightbox-modal">
+      <div class="modal-card lightbox-card">
+        <button class="modal-close-btn" id="lightbox-close-btn" aria-label="Close zoom view" style="background: rgba(255,255,255,0.9); top:15px; right:15px;">✕</button>
+        <img src="" alt="Zoomed Certificate Document" class="lightbox-img" id="lightbox-image-img">
+      </div>
+    </div>
+
+
+    <!-- DYNAMIC TOASTS CONTAINER -->
+    <div class="toast-container" id="toast-container"></div>
+
+  </div>
+
+  <!-- LOAD APPLICATION SCRIPTS -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
