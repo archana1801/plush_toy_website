@@ -16,27 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPage = 1;
   const ITEMS_PER_PAGE = 9;
   
-  // Cart state loaded from localStorage and migrated to object schema
-  let cart;
-  const localCartData = localStorage.getItem("namaste_export_cart");
-  if (localCartData) {
-    let rawCart = JSON.parse(localCartData) || [];
-    cart = rawCart.map(item => {
-      if (typeof item === 'number') {
-        return { id: item, qty: 10, notes: "" };
-      }
-      return item;
-    });
-  } else {
-    // Pre-populate with demo items so the client sees the gorgeous RFQ drawer in action immediately!
-    cart = [
-      { id: 1, qty: 5, notes: "" },
-      { id: 2, qty: 12, notes: "" },
-      { id: 3, qty: 3, notes: "" },
-      { id: 4, qty: 8, notes: "" }
-    ];
-    localStorage.setItem("namaste_export_cart", JSON.stringify(cart));
-  }
+  // Cart state loaded from localStorage
+  let cart = JSON.parse(localStorage.getItem("namaste_export_cart")) || [];
 
   // ==========================================
   // DOM ELEMENTS
@@ -75,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartQuoteForm = document.getElementById("cart-quote-form");
   const cartFooterControls = document.getElementById("cart-footer-controls");
   const cartSuccessMsg = document.getElementById("cart-success-msg");
-  const cartEmptyState = document.getElementById("cart-empty-state");
 
   // Product Modal elements
   const productDetailModal = document.getElementById("product-detail-modal");
@@ -560,12 +540,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const p = products.find(prod => prod.id === productId);
     if (!p) return;
 
-    const existingIndex = cart.findIndex(item => item.id === productId);
-    if (existingIndex > -1) {
-      cart.splice(existingIndex, 1);
+    if (cart.includes(productId)) {
+      cart = cart.filter(id => id !== productId);
       showToast(`Removed: ${p.name}`);
     } else {
-      cart.push({ id: productId, qty: 10, notes: "" });
+      cart.push(productId);
       showToast(`Added to Quote: ${p.name}`);
     }
 
@@ -591,28 +570,26 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderCartItems() {
     cartItemsList.innerHTML = "";
     
-    const cartShoppingLabel = document.getElementById("cart-shopping-label");
-    if (cartShoppingLabel) {
-      cartShoppingLabel.innerText = `Shopping Cart (${cart.length} Item${cart.length === 1 ? "" : "s"})`;
-    }
-
     if (cart.length === 0) {
+      cartItemsList.innerHTML = `
+        <div class="cart-empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+          <h4 class="cart-empty-title">Your Quote list is empty</h4>
+          <p class="cart-empty-desc">Navigate to our catalog to select plush toy categories for custom export quotations.</p>
+        </div>
+      `;
       cartQuoteForm.style.display = "none";
-      cartEmptyState.style.display = "flex";
-      const totalVal = document.getElementById("cart-total-items-val");
-      if (totalVal) totalVal.innerText = "0";
     } else {
       cartQuoteForm.style.display = "flex";
-      cartEmptyState.style.display = "none";
       
-      let totalQty = 0;
-
-      cart.forEach(cartItem => {
-        const item = products.find(prod => prod.id === cartItem.id);
+      cart.forEach(itemId => {
+        const item = products.find(prod => prod.id === itemId);
         if (!item) return;
-
-        totalQty += cartItem.qty;
-        const skuCode = `SKU: NP-${String(item.id).padStart(3, '0')}`;
 
         const cartItemDOM = document.createElement("div");
         cartItemDOM.className = "cart-item";
@@ -620,61 +597,24 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="cart-item-img">
             <img src="${item.image}" alt="${item.name}">
           </div>
-          <div class="cart-item-middle">
-            <div class="cart-item-header-row">
-              <h5 class="cart-item-name">${item.name}</h5>
-            </div>
-            <span class="cart-item-spec">${skuCode} &bull; ${item.size.split(" ")[0]}</span>
-            <input type="text" class="cart-item-comment-input" placeholder="Add notes (e.g. customized color, labels...)" value="${cartItem.notes || ''}">
+          <div class="cart-item-details">
+            <h5 class="cart-item-name">${item.name}</h5>
+            <span class="cart-item-spec">${item.size.split(" ")[0]} &bull; ${item.material}</span>
           </div>
-          
-          <div class="cart-item-qty-wrap">
-            <button type="button" class="cart-item-qty-btn qty-minus">-</button>
-            <span class="cart-item-qty-val">${cartItem.qty}</span>
-            <button type="button" class="cart-item-qty-btn qty-plus">+</button>
-          </div>
-
-          <button type="button" class="cart-item-remove-btn" aria-label="Remove item">✕</button>
+          <button class="cart-item-remove" aria-label="Remove item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+          </button>
         `;
 
-        // Event listener for comments input
-        const commentInput = cartItemDOM.querySelector(".cart-item-comment-input");
-        commentInput.addEventListener("input", (e) => {
-          cartItem.notes = e.target.value;
-          localStorage.setItem("namaste_export_cart", JSON.stringify(cart));
-        });
-
-        // Event listener for minus button
-        cartItemDOM.querySelector(".qty-minus").addEventListener("click", () => {
-          if (cartItem.qty > 1) {
-            cartItem.qty--;
-            localStorage.setItem("namaste_export_cart", JSON.stringify(cart));
-            renderCartItems();
-          } else {
-            toggleCartItem(cartItem.id);
-          }
-        });
-
-        // Event listener for plus button
-        cartItemDOM.querySelector(".qty-plus").addEventListener("click", () => {
-          cartItem.qty++;
-          localStorage.setItem("namaste_export_cart", JSON.stringify(cart));
-          renderCartItems();
-        });
-
-        // Event listener for close button
-        cartItemDOM.querySelector(".cart-item-remove-btn").addEventListener("click", () => {
-          toggleCartItem(cartItem.id);
+        cartItemDOM.querySelector(".cart-item-remove").addEventListener("click", () => {
+          toggleCartItem(itemId);
         });
 
         cartItemsList.appendChild(cartItemDOM);
       });
-
-      // Update total items val
-      const totalVal = document.getElementById("cart-total-items-val");
-      if (totalVal) {
-        totalVal.innerText = totalQty;
-      }
     }
   }
 
@@ -691,13 +631,9 @@ document.addEventListener("DOMContentLoaded", () => {
       company: document.getElementById("cart-company-field").value,
       country: document.getElementById("cart-country-field").value,
       notes: document.getElementById("cart-notes-field").value,
-      items: cart.map(item => {
-        const p = products.find(prod => prod.id === item.id);
-        return {
-          name: p ? p.name : item.id,
-          quantity: item.qty,
-          notes: item.notes
-        };
+      items: cart.map(id => {
+        const p = products.find(prod => prod.id === id);
+        return p ? p.name : id;
       })
     };
 
@@ -714,11 +650,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showToast("Bulk Inquiry Logged Successfully!");
   });
-
-  const cartSuccessCloseBtn = document.getElementById("cart-success-close-btn");
-  if (cartSuccessCloseBtn) {
-    cartSuccessCloseBtn.addEventListener("click", closeCartDrawer);
-  }
 
   // ==========================================
   // PRODUCT DETAILS MODAL VIEW
@@ -755,7 +686,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateModalAddBtnState(productId) {
-    if (cart.some(item => item.id === productId)) {
+    if (cart.includes(productId)) {
       productModalAddBtn.innerText = "Remove from Inquiry List";
       productModalAddBtn.classList.remove("btn-primary");
       productModalAddBtn.classList.add("btn-secondary");

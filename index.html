@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Namaste Overseas | Premium Plush Toy Export Manufacturer</title>
   <meta name="description" content="Namaste Overseas is a leading premium plush toy export manufacturer. Delivering high-quality, custom designed, safety-certified soft toys globally.">
-  <link rel="stylesheet" href="index.css?v=8">
+  <link rel="stylesheet" href="index.css?v=7">
 </head>
 <body>
 
@@ -833,79 +833,42 @@
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <path d="M16 10a4 4 0 0 1-8 0"></path>
           </svg>
-          Request for Quote (RFQ)
+          Quote Inquiry List
         </h3>
         <button class="cart-drawer-close" id="cart-close-btn" aria-label="Close Inquiry List">✕</button>
       </div>
 
-      <form id="cart-quote-form" style="display:flex; flex-direction:column; height: calc(100% - 70px); margin: 0;">
-        <!-- Scrollable Cart content -->
-        <div class="cart-drawer-body" style="flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 20px;">
-          
-          <div class="cart-section-title" id="cart-shopping-label" style="font-size: 15px; font-weight: 700; color: var(--text-dark); border-bottom: 1px solid var(--border-divider); padding-bottom: 8px;">
-            Shopping Cart (0 Items)
-          </div>
-
-          <!-- List of items -->
-          <div class="cart-items-container" id="cart-items-list" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px;">
-            <!-- Dynamically populated in app.js -->
-          </div>
-
-          <!-- Special Instructions -->
-          <div class="form-field">
-            <label class="form-label" style="font-weight: 700; font-size: 13px;" for="cart-notes-field">Special Instructions / General Notes</label>
-            <textarea class="form-input" id="cart-notes-field" style="min-height: 80px; font-size: 13px;" placeholder="[ e.g., We need specific packaging for our corporate event by Dec 1st. Please quote with bulk pricing. ]"></textarea>
-          </div>
-
-          <!-- Contact Fields -->
-          <div class="cart-contact-fields-wrap" style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--border-divider); padding-top: 20px; margin-top: 10px;">
-            <div class="cart-section-title" style="font-size: 14px; font-weight: 700; color: var(--text-dark);">
-              Contact & Shipping Details
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="cart-name-field">Full Name</label>
-              <input class="form-input" type="text" id="cart-name-field" placeholder="John Doe" required>
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="cart-company-field">Company Name</label>
-              <input class="form-input" type="text" id="cart-company-field" placeholder="Toy Traders Inc." required>
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="cart-country-field">Destination Country</label>
-              <input class="form-input" type="text" id="cart-country-field" placeholder="Germany" required>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Sticky Footer -->
-        <div class="cart-drawer-footer" id="cart-footer-controls" style="border-top: 1px solid var(--border-divider); padding: 20px 24px; background: var(--bg-input); display: flex; flex-direction: column; gap: 12px; flex-shrink: 0;">
-          <div class="cart-total-items-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 700; color: var(--text-dark);">
-            <span>Total Items:</span>
-            <span id="cart-total-items-val">0</span>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Quote Request</button>
-        </div>
-      </form>
-
-      <!-- Success Msg outside form to take over drawer -->
-      <div class="form-success-alert" id="cart-success-msg" style="display:none; padding: 40px 24px; text-align: center; height: calc(100% - 70px); flex-direction: column; justify-content: center; align-items: center; gap: 16px; margin: 0; background: #ffffff;">
-        <div class="form-success-icon" style="width: 64px; height: 64px; font-size: 32px; display: flex; align-items: center; justify-content: center; background: #E8F5E9; color: #2E7D32; border-radius: 50%;">✓</div>
-        <h3 class="form-success-title" style="font-size: 20px; font-weight: 800;">Quote Request Logged!</h3>
-        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; max-width: 280px;">We've received your inquiry details for the selected products. Our design and logistics team will email you pricing sheets shortly.</p>
-        <button class="btn btn-secondary" id="cart-success-close-btn" style="margin-top: 20px; width: 100%;">Close Drawer</button>
+      <!-- Scrollable Cart items -->
+      <div class="cart-items-container" id="cart-items-list">
+        <!-- Dynamically populated in app.js -->
       </div>
 
-      <!-- Empty state (sibling of form) -->
-      <div class="cart-empty-state-wrap" id="cart-empty-state" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 16px; padding: 40px 24px; height: calc(100% - 70px); background: #ffffff;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 64px; height: 64px; color: var(--text-light);">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-          <line x1="9" y1="9" x2="9.01" y2="9"></line>
-          <line x1="15" y1="9" x2="15.01" y2="9"></line>
-        </svg>
-        <h4 class="cart-empty-title" style="font-size: 18px; font-weight: 700; color: var(--text-dark);">Your Quote list is empty</h4>
-        <p class="cart-empty-desc" style="font-size: 14px; color: var(--text-muted); max-width: 260px; line-height: 1.5;">Navigate to our catalog to select plush toy categories for custom export quotations.</p>
+      <!-- Cart Footer & submission form -->
+      <div class="cart-drawer-footer" id="cart-footer-controls">
+        <form id="cart-quote-form" style="display:flex; flex-direction:column; gap:12px;">
+          <div class="form-field">
+            <label class="form-label" for="cart-name-field">Full Name</label>
+            <input class="form-input" type="text" id="cart-name-field" placeholder="John Doe" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cart-company-field">Company Name</label>
+            <input class="form-input" type="text" id="cart-company-field" placeholder="Toy Traders Inc." required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cart-country-field">Destination Country</label>
+            <input class="form-input" type="text" id="cart-country-field" placeholder="Germany" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="cart-notes-field">Inquiry Notes (Quantity, Shipping, Custom Labels)</label>
+            <textarea class="form-input" id="cart-notes-field" style="min-height:70px;" placeholder="e.g. Need 2,000 units of each item, custom sewn labels..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Request Bulk FOB Estimates</button>
+        </form>
+        <div class="form-success-alert" id="cart-success-msg" style="display:none; margin-top:0;">
+          <div class="form-success-icon">✓</div>
+          <h3 class="form-success-title">Quote Request Logged!</h3>
+          <p style="font-size:13px; line-height:1.4; margin-top:4px;">We've received your inquiry details for the selected products. Our design and logistics team will email you pricing sheets shortly.</p>
+        </div>
       </div>
     </div>
 
@@ -975,6 +938,6 @@
 
   <!-- LOAD APPLICATION SCRIPTS -->
   <script src="data.js"></script>
-  <script src="app.js?v=4"></script>
+  <script src="app.js"></script>
 </body>
 </html>

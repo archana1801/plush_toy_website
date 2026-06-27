@@ -1,6 +1,6 @@
 # Namaste Overseas | Premium Plush Toy Export Website
 
-A premium, highly interactive, and responsive web application built for **Namaste Overseas**—a leading custom plush toy manufacturer and exporter. The website showcases their manufacturing capabilities, certifications, and a full catalog of 53 custom plush toys, complete with an interactive Request for Quote (RFQ) system.
+A premium, highly interactive, and responsive web application built for **Namaste Overseas**—a leading custom plush toy manufacturer and exporter. The website showcases their manufacturing capabilities, certifications, and a full catalog of 53 custom plush toys.
 
 ---
 
@@ -20,10 +20,6 @@ Features custom overlapping colored badges and plush product images:
 Demonstrates the client-side search, sorting, and tag-filtering engine:
 ![Catalog View Preview](catalog_view.png)
 
-### 4. Quote Request (RFQ) Drawer
-Shows the slide-out bulk inquiry list and quote submission layout:
-![RFQ Drawer Preview](rfq_drawer.png)
-
 ---
 
 ## ✨ Key Features
@@ -32,7 +28,6 @@ Shows the slide-out bulk inquiry list and quote submission layout:
 * **Organic Ocean Wave Fills**: Infinite scrolling, organic double-wavelength background waves inside hero panels to align with the name "Overseas".
 * **Overlapping Feature Grid**: Clean layout containing catalog product representations inside rounded frames, offset by colored circular badges.
 * **Product Catalog (53 Items)**: Interactive client-side products table sourced from `data.js`. Supports search queries, category tagging, alphabetical sorting, and detail modals.
-* **RFQ Shopping Cart Drawer**: Users can add products with custom bulk comments and download/submit inquiries directly to the export desk.
 * **Responsive Layouts**: Scaled and adapted via custom media queries for seamless display across mobile, tablet, and widescreen desktops.
 * **Modern Design Tokens**: Utilizes a pastel violet-coral CSS variable palette, Outfit typography, and custom glassmorphic overlay shadows.
 
