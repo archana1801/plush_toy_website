@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Cart state loaded from localStorage
   let cart = JSON.parse(localStorage.getItem("namaste_export_cart")) || [];
+  
+  // Clean up any object-schema cart data left over in the browser's local storage
+  if (cart.length > 0 && typeof cart[0] === 'object') {
+    cart = [];
+    localStorage.removeItem("namaste_export_cart");
+  }
 
   // ==========================================
   // DOM ELEMENTS
