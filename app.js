@@ -17,13 +17,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const ITEMS_PER_PAGE = 9;
   
   // Cart state loaded from localStorage and migrated to object schema
-  let rawCart = JSON.parse(localStorage.getItem("namaste_export_cart")) || [];
-  let cart = rawCart.map(item => {
-    if (typeof item === 'number') {
-      return { id: item, qty: 10, notes: "" };
-    }
-    return item;
-  });
+  let cart;
+  const localCartData = localStorage.getItem("namaste_export_cart");
+  if (localCartData) {
+    let rawCart = JSON.parse(localCartData) || [];
+    cart = rawCart.map(item => {
+      if (typeof item === 'number') {
+        return { id: item, qty: 10, notes: "" };
+      }
+      return item;
+    });
+  } else {
+    // Pre-populate with demo items so the client sees the gorgeous RFQ drawer in action immediately!
+    cart = [
+      { id: 1, qty: 5, notes: "" },
+      { id: 2, qty: 12, notes: "" },
+      { id: 3, qty: 3, notes: "" },
+      { id: 4, qty: 8, notes: "" }
+    ];
+    localStorage.setItem("namaste_export_cart", JSON.stringify(cart));
+  }
 
   // ==========================================
   // DOM ELEMENTS
