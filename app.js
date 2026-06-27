@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartQuoteForm = document.getElementById("cart-quote-form");
   const cartFooterControls = document.getElementById("cart-footer-controls");
   const cartSuccessMsg = document.getElementById("cart-success-msg");
+  const cartEmptyState = document.getElementById("cart-empty-state");
 
   // Product Modal elements
   const productDetailModal = document.getElementById("product-detail-modal");
@@ -583,23 +584,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (cart.length === 0) {
-      cartItemsList.innerHTML = `
-        <div class="cart-empty-state">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-          </svg>
-          <h4 class="cart-empty-title">Your Quote list is empty</h4>
-          <p class="cart-empty-desc">Navigate to our catalog to select plush toy categories for custom export quotations.</p>
-        </div>
-      `;
       cartQuoteForm.style.display = "none";
+      cartEmptyState.style.display = "flex";
       const totalVal = document.getElementById("cart-total-items-val");
       if (totalVal) totalVal.innerText = "0";
     } else {
       cartQuoteForm.style.display = "flex";
+      cartEmptyState.style.display = "none";
       
       let totalQty = 0;
 

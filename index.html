@@ -895,6 +895,18 @@
         <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; max-width: 280px;">We've received your inquiry details for the selected products. Our design and logistics team will email you pricing sheets shortly.</p>
         <button class="btn btn-secondary" id="cart-success-close-btn" style="margin-top: 20px; width: 100%;">Close Drawer</button>
       </div>
+
+      <!-- Empty state (sibling of form) -->
+      <div class="cart-empty-state-wrap" id="cart-empty-state" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 16px; padding: 40px 24px; height: calc(100% - 70px); background: #ffffff;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 64px; height: 64px; color: var(--text-light);">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+          <line x1="9" y1="9" x2="9.01" y2="9"></line>
+          <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </svg>
+        <h4 class="cart-empty-title" style="font-size: 18px; font-weight: 700; color: var(--text-dark);">Your Quote list is empty</h4>
+        <p class="cart-empty-desc" style="font-size: 14px; color: var(--text-muted); max-width: 260px; line-height: 1.5;">Navigate to our catalog to select plush toy categories for custom export quotations.</p>
+      </div>
     </div>
 
 
@@ -963,6 +975,6 @@
 
   <!-- LOAD APPLICATION SCRIPTS -->
   <script src="data.js"></script>
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
