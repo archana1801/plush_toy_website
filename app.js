@@ -16,8 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPage = 1;
   const ITEMS_PER_PAGE = 9;
   
-  // Cart state loaded from localStorage
-  let cart = JSON.parse(localStorage.getItem("namaste_export_cart")) || [];
+  // Cart state loaded from localStorage and migrated to object schema
+  let rawCart = JSON.parse(localStorage.getItem("namaste_export_cart")) || [];
+  let cart = rawCart.map(item => {
+    if (typeof item === 'number') {
+      return { id: item, qty: 10, notes: "" };
+    }
+    return item;
+  });
 
   // ==========================================
   // DOM ELEMENTS
@@ -540,11 +546,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const p = products.find(prod => prod.id === productId);
     if (!p) return;
 
-    if (cart.includes(productId)) {
-      cart = cart.filter(id => id !== productId);
+    const existingIndex = cart.findIndex(item => item.id === productId);
+    if (existingIndex > -1) {
+      cart.splice(existingIndex, 1);
       showToast(`Removed: ${p.name}`);
     } else {
-      cart.push(productId);
+      cart.push({ id: productId, qty: 10, notes: "" });
       showToast(`Added to Quote: ${p.name}`);
     }
 
@@ -570,6 +577,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderCartItems() {
     cartItemsList.innerHTML = "";
     
+    const cartShoppingLabel = document.getElementById("cart-shopping-label");
+    if (cartShoppingLabel) {
+      cartShoppingLabel.innerText = `Shopping Cart (${cart.length} Item${cart.length === 1 ? "" : "s"})`;
+    }
+
     if (cart.length === 0) {
       cartItemsList.innerHTML = `
         <div class="cart-empty-state">
@@ -584,12 +596,19 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
       cartQuoteForm.style.display = "none";
+      const totalVal = document.getElementById("cart-total-items-val");
+      if (totalVal) totalVal.innerText = "0";
     } else {
       cartQuoteForm.style.display = "flex";
       
-      cart.forEach(itemId => {
-        const item = products.find(prod => prod.id === itemId);
+      let totalQty = 0;
+
+      cart.forEach(cartItem => {
+        const item = products.find(prod => prod.id === cartItem.id);
         if (!item) return;
+
+        totalQty += cartItem.qty;
+        const skuCode = `SKU: NP-${String(item.id).padStart(3, '0')}`;
 
         const cartItemDOM = document.createElement("div");
         cartItemDOM.className = "cart-item";
@@ -597,24 +616,61 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="cart-item-img">
             <img src="${item.image}" alt="${item.name}">
           </div>
-          <div class="cart-item-details">
-            <h5 class="cart-item-name">${item.name}</h5>
-            <span class="cart-item-spec">${item.size.split(" ")[0]} &bull; ${item.material}</span>
+          <div class="cart-item-middle">
+            <div class="cart-item-header-row">
+              <h5 class="cart-item-name">${item.name}</h5>
+            </div>
+            <span class="cart-item-spec">${skuCode} &bull; ${item.size.split(" ")[0]}</span>
+            <input type="text" class="cart-item-comment-input" placeholder="Add notes (e.g. customized color, labels...)" value="${cartItem.notes || ''}">
           </div>
-          <button class="cart-item-remove" aria-label="Remove item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="3 6 5 6 21 6"></polyline>
-              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-            </svg>
-          </button>
+          
+          <div class="cart-item-qty-wrap">
+            <button type="button" class="cart-item-qty-btn qty-minus">-</button>
+            <span class="cart-item-qty-val">${cartItem.qty}</span>
+            <button type="button" class="cart-item-qty-btn qty-plus">+</button>
+          </div>
+
+          <button type="button" class="cart-item-remove-btn" aria-label="Remove item">✕</button>
         `;
 
-        cartItemDOM.querySelector(".cart-item-remove").addEventListener("click", () => {
-          toggleCartItem(itemId);
+        // Event listener for comments input
+        const commentInput = cartItemDOM.querySelector(".cart-item-comment-input");
+        commentInput.addEventListener("input", (e) => {
+          cartItem.notes = e.target.value;
+          localStorage.setItem("namaste_export_cart", JSON.stringify(cart));
+        });
+
+        // Event listener for minus button
+        cartItemDOM.querySelector(".qty-minus").addEventListener("click", () => {
+          if (cartItem.qty > 1) {
+            cartItem.qty--;
+            localStorage.setItem("namaste_export_cart", JSON.stringify(cart));
+            renderCartItems();
+          } else {
+            toggleCartItem(cartItem.id);
+          }
+        });
+
+        // Event listener for plus button
+        cartItemDOM.querySelector(".qty-plus").addEventListener("click", () => {
+          cartItem.qty++;
+          localStorage.setItem("namaste_export_cart", JSON.stringify(cart));
+          renderCartItems();
+        });
+
+        // Event listener for close button
+        cartItemDOM.querySelector(".cart-item-remove-btn").addEventListener("click", () => {
+          toggleCartItem(cartItem.id);
         });
 
         cartItemsList.appendChild(cartItemDOM);
       });
+
+      // Update total items val
+      const totalVal = document.getElementById("cart-total-items-val");
+      if (totalVal) {
+        totalVal.innerText = totalQty;
+      }
     }
   }
 
@@ -631,9 +687,13 @@ document.addEventListener("DOMContentLoaded", () => {
       company: document.getElementById("cart-company-field").value,
       country: document.getElementById("cart-country-field").value,
       notes: document.getElementById("cart-notes-field").value,
-      items: cart.map(id => {
-        const p = products.find(prod => prod.id === id);
-        return p ? p.name : id;
+      items: cart.map(item => {
+        const p = products.find(prod => prod.id === item.id);
+        return {
+          name: p ? p.name : item.id,
+          quantity: item.qty,
+          notes: item.notes
+        };
       })
     };
 
@@ -650,6 +710,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showToast("Bulk Inquiry Logged Successfully!");
   });
+
+  const cartSuccessCloseBtn = document.getElementById("cart-success-close-btn");
+  if (cartSuccessCloseBtn) {
+    cartSuccessCloseBtn.addEventListener("click", closeCartDrawer);
+  }
 
   // ==========================================
   // PRODUCT DETAILS MODAL VIEW
@@ -686,7 +751,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateModalAddBtnState(productId) {
-    if (cart.includes(productId)) {
+    if (cart.some(item => item.id === productId)) {
       productModalAddBtn.innerText = "Remove from Inquiry List";
       productModalAddBtn.classList.remove("btn-primary");
       productModalAddBtn.classList.add("btn-secondary");
